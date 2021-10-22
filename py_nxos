@@ -1,0 +1,23 @@
+from netmiko import ConnectHandler
+
+nxos = {
+    'device_type': 'cisco_ios',
+    'host':   '192.168.255.23',
+    'username': 'cisco',
+    'password': 'cisco',
+    }
+    
+    # Connecting via SSH
+    
+    net_connect = ConnectHandler(**nxos)
+    
+    # Running Commands
+    output = net_connect.send_command("show ip int brief")
+    
+    print('show ip int brief)
+    print(output)
+    
+    output2= net_connect.send_command("show version")
+    
+    print('show ver')
+    print(output2)
